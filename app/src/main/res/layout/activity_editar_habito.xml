@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1F2D"
+    android:textAlignment="center"
+    tools:context=".AddHabito">
+
+    <EditText
+        android:id="@+id/editDate"
+        android:layout_width="170dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="15dp"
+        android:alpha="0.85"
+        android:background="@xml/bordefechas"
+        android:ems="10"
+        android:hint="FECHA"
+        android:inputType="date"
+        app:circularflow_radiusInDP="40"
+        app:layout_constraintEnd_toStartOf="@+id/editTime"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Inicio"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#299C81"
+        android:foreground="@color/white"
+        android:foregroundTint="#00FFFFFF"
+        android:text="Inicio"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="@color/white"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:id="@+id/addHabito"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="#299C81"
+        android:foreground="@color/white"
+        android:foregroundTint="#00299C81"
+        android:text="Añadir"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Inicio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTime"
+        android:layout_width="170dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="15dp"
+        android:alpha="0.85"
+        android:background="@xml/bordefechas"
+        android:ems="10"
+        android:hint="HORA"
+        android:inputType="time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editDate"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/recyclerViewHabitos"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginStart="1dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:layout_marginEnd="2dp"-->
+    <!--        android:layout_marginBottom="8dp"-->
+    <!--        android:alpha="0.85"-->
+    <!--        android:background="@xml/border_textview"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/Inicio"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/addHabito"-->
+    <!--        tools:listitem="@layout/textrecyclerview" />-->
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:alpha="0.80"
+        android:background="@xml/border_textview"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="ESCRIBA SU NUEVO HÁBITO"
+        android:inputType="textMultiLine"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/addHabito"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editDate"
+        tools:listitem="@layout/textrecyclerview" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
