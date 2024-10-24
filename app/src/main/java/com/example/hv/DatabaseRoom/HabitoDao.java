@@ -21,5 +21,7 @@ public interface HabitoDao {
     @Query("SELECT* FROM Habito")
     List<Habito> getAllHabitos();
 
-//HoHOLAL
+    @Update
+    public void update(Habito... habitos);
+
 }
