@@ -73,6 +73,7 @@ public class HabitoAdapter extends RecyclerView.Adapter<HabitoAdapter.HabitoView
         intent.putExtra("text", String.valueOf(habito.getName()));
         intent.putExtra("hora", String.valueOf(habito.getHora()));
         intent.putExtra("fecha", String.valueOf(habito.getFecha()));
+
         context.startActivity(intent);
 
         notifyItemChanged(position);

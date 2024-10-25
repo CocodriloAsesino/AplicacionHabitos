@@ -22,6 +22,6 @@ public interface HabitoDao {
     List<Habito> getAllHabitos();
 
     @Update
-    public void update(Habito... habitos);
+    public void update(Habito habitos);
 
 }

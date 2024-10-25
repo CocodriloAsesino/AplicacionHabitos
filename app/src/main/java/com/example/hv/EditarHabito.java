@@ -71,10 +71,14 @@ public class EditarHabito extends AppCompatActivity {
             return;
         }
 
-        Habito habitoNuevo = new Habito(texto, hora, fecha);
-        habitoNuevo.setId(Integer.parseInt(intent.getStringExtra("id")));
+        habitosList = DatabaseClient.getInstance(getApplicationContext()).getHabitoDatabase().habitoDao().getAllHabitos();
+        Habito habito = habitosList.get(position);
 
-        DatabaseClient.getInstance(getApplicationContext()).getHabitoDatabase().habitoDao().insert(habitoNuevo);
+        habito.setHora(hora);
+        habito.setFecha(fecha);
+        habito.setName(texto);
+
+        DatabaseClient.getInstance(getApplicationContext()).getHabitoDatabase().habitoDao().update(habito);
 
         startActivity(new Intent(this,VistaHabito.class));
     }
