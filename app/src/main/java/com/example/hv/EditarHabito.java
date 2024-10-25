@@ -38,16 +38,6 @@ public class EditarHabito extends AppCompatActivity {
             return insets;
         });
 
-
-
-        inicio = findViewById(R.id.Inicio);
-        inicio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ir_inicio();
-            }
-        });
-
         buttonSave = findViewById(R.id.addHabito);
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -65,6 +65,26 @@ public class HabitoAdapter extends RecyclerView.Adapter<HabitoAdapter.HabitoView
         }).start();
     }
 
+    public void editItem(int position){
+
+        Habito habito = habitosList.get(position);
+        Intent intent = new Intent(context, EditarHabito.class);
+        intent.putExtra("id", String.valueOf(habito.getId()));
+        intent.putExtra("text", String.valueOf(habito.getName()));
+        intent.putExtra("hora", String.valueOf(habito.getHora()));
+        intent.putExtra("fecha", String.valueOf(habito.getFecha()));
+        context.startActivity(intent);
+
+        notifyItemChanged(position);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                habitoDao.update(habito);
+            }
+        }).start();
+    }
+
     public static class HabitoViewHolder extends RecyclerView.ViewHolder {
         TextView txtName, txtHora, txtFecha;
 

@@ -32,20 +32,14 @@ public class SwipeToDeleteCallback extends ItemTouchHelper.SimpleCallback {
         if(direction == ItemTouchHelper.LEFT)
             habitoAdapter.deleteItem(position);
         if(direction == ItemTouchHelper.RIGHT){
-            Context context = viewHolder.itemView.getContext();
-            habitosList = DatabaseClient.getInstance(context).getHabitoDatabase().habitoDao().getAllHabitos();
-            Habito habito = habitosList.get(position);
-
-            Intent intent = new Intent(context, EditarHabito.class);
-
-            intent.putExtra("fecha", habito.getFecha());
-            intent.putExtra("hora", habito.getHora());
-            intent.putExtra("text", habito.getName());
-            intent.putExtra("id", habito.getId());
-
-            context.startActivity(intent);
-
-            habitoAdapter.deleteItem(position);
+            habitoAdapter.editItem(position);
+//            Intent intent = new Intent(context, EditarHabito.class);
+//
+//            intent.putExtra("posicion", position);
+//
+//            context.startActivity(intent);
+//
+//            habitoAdapter.deleteItem(position);
         }
 
     }
