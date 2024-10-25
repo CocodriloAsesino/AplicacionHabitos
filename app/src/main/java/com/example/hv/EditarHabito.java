@@ -38,6 +38,16 @@ public class EditarHabito extends AppCompatActivity {
             return insets;
         });
 
+
+
+        inicio = findViewById(R.id.Inicio);
+        inicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ir_inicio();
+            }
+        });
+
         buttonSave = findViewById(R.id.addHabito);
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,14 +81,10 @@ public class EditarHabito extends AppCompatActivity {
             return;
         }
 
-        habitosList = DatabaseClient.getInstance(getApplicationContext()).getHabitoDatabase().habitoDao().getAllHabitos();
-        Habito habito = habitosList.get(position);
+        Habito habitoNuevo = new Habito(texto, hora, fecha);
+        habitoNuevo.setId(Integer.parseInt(intent.getStringExtra("id")));
 
-        habito.setHora(hora);
-        habito.setFecha(fecha);
-        habito.setName(texto);
-
-        DatabaseClient.getInstance(getApplicationContext()).getHabitoDatabase().habitoDao().update(habito);
+        DatabaseClient.getInstance(getApplicationContext()).getHabitoDatabase().habitoDao().insert(habitoNuevo);
 
         startActivity(new Intent(this,VistaHabito.class));
     }
