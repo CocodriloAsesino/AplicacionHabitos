@@ -25,43 +25,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/Inicio"
-        android:layout_width="220dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="#299C81"
-        android:foreground="@color/white"
-        android:foregroundTint="#00FFFFFF"
-        android:text="Inicio"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textColorLink="@color/white"
-        android:textSize="24sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
 
     <Button
         android:id="@+id/addHabito"
-        android:layout_width="220dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="#299C81"
         android:foreground="@color/white"
         android:foregroundTint="#00299C81"
-        android:text="Añadir"
+        android:text="Editar Habito"
         android:textColor="#ffffff"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/Inicio"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
