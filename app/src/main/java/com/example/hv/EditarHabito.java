@@ -21,11 +21,8 @@ import java.util.List;
 public class EditarHabito extends AppCompatActivity {
 
     private EditText editDate, editTime, editText;
-    private Button inicio, buttonSave;
-    private Integer position;
-    private List<Habito> habitosList;
-    private HabitoAdapter habitoAdapter;
-    private HabitoDao habitoDao;
+    private Button buttonSave;
+
     Intent intent = getIntent();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +33,6 @@ public class EditarHabito extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        });
-
-
-
-        inicio = findViewById(R.id.Inicio);
-        inicio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ir_inicio();
-            }
         });
 
         buttonSave = findViewById(R.id.addHabito);
