@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#0D1F2D"
     android:textAlignment="center"
-    tools:context=".AddHabito">
+    tools:context=".EditarHabito">
 
     <EditText
         android:id="@+id/editDate"
