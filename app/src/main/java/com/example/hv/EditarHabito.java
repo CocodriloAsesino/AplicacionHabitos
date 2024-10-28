@@ -2,6 +2,7 @@ package com.example.hv;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,8 +23,10 @@ public class EditarHabito extends AppCompatActivity {
 
     private EditText editDate, editTime, editText;
     private Button buttonSave;
+    private List<Habito> habitosList;
+    private int position;
 
-    Intent intent = getIntent();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,8 @@ public class EditarHabito extends AppCompatActivity {
             }
         });
 
+        Intent intent = getIntent();
+
         editText = findViewById(R.id.editText);
         editDate = findViewById(R.id.editDate);
         editTime = findViewById(R.id.editTime);
@@ -50,6 +55,10 @@ public class EditarHabito extends AppCompatActivity {
         editText.setText(intent.getStringExtra("text"));
         editDate.setText(intent.getStringExtra("fecha"));
         editTime.setText(intent.getStringExtra("hora"));
+
+
+            position = intent.getIntExtra("position", -1);
+
 
         }
 
@@ -68,10 +77,16 @@ public class EditarHabito extends AppCompatActivity {
             return;
         }
 
-        Habito habitoNuevo = new Habito(texto, hora, fecha);
-        habitoNuevo.setId(Integer.parseInt(intent.getStringExtra("id")));
+        HabitoDao habitoDao = DatabaseClient.getInstance(getApplicationContext()).getHabitoDatabase().habitoDao();
 
-        DatabaseClient.getInstance(getApplicationContext()).getHabitoDatabase().habitoDao().insert(habitoNuevo);
+        habitosList = DatabaseClient.getInstance(getApplicationContext()).getHabitoDatabase().habitoDao().getAllHabitos();
+        habitosList.get(position).setHora(hora);
+        habitosList.get(position).setFecha(fecha);
+        habitosList.get(position).setName(texto);
+
+        DatabaseClient.getInstance(getApplicationContext()).getHabitoDatabase().habitoDao().update(habitosList.get(position));
+
+        Toast.makeText(this, "Habito editado", Toast.LENGTH_SHORT).show();
 
         startActivity(new Intent(this,VistaHabito.class));
     }

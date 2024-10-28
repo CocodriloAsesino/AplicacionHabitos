@@ -41,11 +41,10 @@ public class SwipeToDeleteCallback extends ItemTouchHelper.SimpleCallback {
             intent.putExtra("fecha", habito.getFecha());
             intent.putExtra("hora", habito.getHora());
             intent.putExtra("text", habito.getName());
-            intent.putExtra("id", habito.getId());
+            intent.putExtra("position", position);
 
             context.startActivity(intent);
 
-            habitoAdapter.deleteItem(position);
         }
 
     }
