@@ -27,7 +27,7 @@
 
     <Button
         android:id="@+id/Inicio"
-        android:layout_width="220dp"
+        android:layout_width="180dp"
         android:layout_height="60dp"
         android:layout_marginBottom="32dp"
         android:backgroundTint="#299C81"
@@ -42,26 +42,25 @@
         android:textSize="24sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintEnd_toStartOf="@+id/addHabito"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
 
     <Button
         android:id="@+id/addHabito"
-        android:layout_width="220dp"
+        android:layout_width="180dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="#299C81"
         android:foreground="@color/white"
         android:foregroundTint="#00299C81"
         android:text="Añadir"
         android:textColor="#ffffff"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/Inicio"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/Inicio" />
 
     <EditText
         android:id="@+id/editTime"
@@ -106,7 +105,7 @@
         android:hint="ESCRIBA SU NUEVO HÁBITO"
         android:inputType="textMultiLine"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/addHabito"
+        app:layout_constraintBottom_toTopOf="@+id/Inicio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editDate"
