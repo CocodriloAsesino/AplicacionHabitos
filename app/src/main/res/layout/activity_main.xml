@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0D1F2D"
     tools:context=".MainActivity">
 
     <Button
@@ -13,7 +12,6 @@
         android:layout_width="220dp"
         android:layout_height="60dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="#299C81"
         android:text="Editar"
         android:textColor="#ffffff"
         android:textSize="24sp"
