@@ -62,11 +62,6 @@ public class EditarHabito extends AppCompatActivity {
 
         }
 
-    public void ir_inicio(){
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
-    }
-
     private void saveHabito() {
         String hora = editTime.getText().toString();
         String fecha = editDate.getText().toString();

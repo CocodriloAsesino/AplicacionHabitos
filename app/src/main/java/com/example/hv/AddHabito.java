@@ -92,7 +92,7 @@ public class AddHabito extends AppCompatActivity {
         Toast.makeText(this, "Habito Añadido", Toast.LENGTH_SHORT).show();
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(3000);
             startActivity(new Intent(this,VistaHabito.class));
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
