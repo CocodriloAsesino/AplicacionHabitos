@@ -26,7 +26,6 @@
         android:layout_width="220dp"
         android:layout_height="60dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="#299C81"
         android:text="Inicio"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
