@@ -3,6 +3,7 @@ package com.example.hv;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,9 +12,18 @@ import android.widget.Switch;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.hv.DatabaseRoom.DatabaseClient;
+import com.example.hv.DatabaseRoom.HabitoDao;
+
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 
@@ -21,9 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
     private Switch aSwitch;
     private Button editarHabitos;
-    private static final int REQUEST_CODE = 1; // Código de solicitud para permisos
-    private Button createNotificationButton; // Botón para crear la notificación
-    private static final String TAG = "Notify";
+    private RecyclerView recyclerView;
+    private List<Habito> habitosList;
+    private HabitoAdapter habitoAdapter;
+
 
 
     @Override
@@ -49,6 +60,11 @@ public class MainActivity extends AppCompatActivity {
 
         autoD8.setText(date);
         autoTime.setText(time);
+
+        recyclerView = findViewById(R.id.recyclerViewHabitos);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        loadHabitos();
 
         aSwitch = findViewById(R.id.switch1);
         int mode = this.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
@@ -78,5 +94,24 @@ public class MainActivity extends AppCompatActivity {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             aSwitch.setText("LIGHT MODE");
         }
+    }
+
+    public void loadHabitos(){
+        habitosList = DatabaseClient.getInstance(getApplicationContext()).getHabitoDatabase().habitoDao().getAllHabitos();
+
+        HabitoDao habitoDao = DatabaseClient.getInstance(getApplicationContext()).getHabitoDatabase().habitoDao();
+        List<Habito> habitosListToday = new ArrayList<>();
+
+        DateFormat df = new SimpleDateFormat("yyyy-M-dd");
+        String now = df.format(new Date());
+
+        for (Habito habito : habitosList){
+            if(habito.getFecha().equals(now))
+                habitosListToday.add(habito);
+        }
+
+        habitoAdapter = new HabitoAdapter(habitosListToday, habitoDao, getApplicationContext());
+
+        recyclerView.setAdapter(habitoAdapter);
     }
 }
