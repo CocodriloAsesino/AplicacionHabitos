@@ -4,7 +4,10 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:windowBackground">@color/background</item>
-        <item name="colorPrimary">#299C81</item>
+        <item name="colorPrimary">@color/buttonColor</item>
+        <item name="android:textColorPrimary">@color/text</item>
+        <item name="android:textColorSecondary">@color/text</item>
+
     </style>
 
     <style name="Theme.HV" parent="Base.Theme.HV" />

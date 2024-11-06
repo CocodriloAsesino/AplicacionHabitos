@@ -3,7 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background">#0D1F2D</color>
+    <color name="backgroundBlack">#3D4042</color>
     <color name="buttonColor">#299C81</color>
+    <color name="buttonColorBlack">#0F2A21</color>
+    <color name="text">#FFF</color>
+    <color name="textBlack">#FF000000</color>
 
 
 </resources>
