@@ -10,14 +10,13 @@
 
     <DatePicker
         android:id="@+id/editDate"
-        android:layout_width="170dp"
+        android:layout_width="0dp"
         android:layout_height="155dp"
         android:layout_marginTop="15dp"
-        android:background="@xml/bordefechas"
-
+        android:scaleX="1.5"
         android:calendarViewShown="false"
         android:datePickerMode="spinner"
-        app:layout_constraintEnd_toStartOf="@+id/editTime"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,15 +36,14 @@
 
     <TimePicker
         android:id="@+id/editTime"
-        android:layout_width="170dp"
+        android:layout_width="0dp"
         android:layout_height="155dp"
         android:layout_marginTop="15dp"
-        android:alpha="0.85"
+        android:scaleX="1.5"
         android:timePickerMode="spinner"
-        android:background="@xml/bordefechas"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editDate"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editDate" />
 
     <EditText
         android:id="@+id/editText"

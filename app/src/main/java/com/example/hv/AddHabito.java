@@ -25,6 +25,7 @@ import androidx.core.content.ContextCompat;
 
 import com.example.hv.DatabaseRoom.DatabaseClient;
 
+import java.lang.reflect.Field;
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -64,6 +65,18 @@ public class AddHabito extends AppCompatActivity {
               }
           });
         editTime.setIs24HourView(true);
+
+        try {
+            Field f[] = this.getClass().getDeclaredFields();
+            for (Field field : f) {
+                if (field.getName().equals("mYearPicker")) {
+                    field.setAccessible(true);
+                    ((View) field.get(this)).setVisibility(View.GONE);
+                }
+            }
+        } catch (SecurityException | IllegalArgumentException | IllegalAccessException e) {
+            Log.d("ERROR", e.getMessage());
+        }
 
     }
 

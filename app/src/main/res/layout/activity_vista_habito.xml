@@ -27,6 +27,7 @@
         android:layout_height="60dp"
         android:layout_marginBottom="32dp"
         android:text="Inicio"
+        android:textColor="#FFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
