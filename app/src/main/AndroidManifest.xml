@@ -19,9 +19,6 @@
             android:name=".EditarHabito"
             android:exported="false" />
         <activity
-            android:name=".AddNotificacion"
-            android:exported="false" />
-        <activity
             android:name=".VistaHabito"
             android:exported="false" />
         <activity
