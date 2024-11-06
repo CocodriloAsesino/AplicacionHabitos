@@ -63,6 +63,7 @@ public class AddHabito extends AppCompatActivity {
                   saveHabito();
               }
           });
+        editTime.setIs24HourView(true);
 
     }
 

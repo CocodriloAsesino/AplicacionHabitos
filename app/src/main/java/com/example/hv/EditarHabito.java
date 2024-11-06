@@ -60,6 +60,7 @@ public class EditarHabito extends AppCompatActivity {
 
         position = intent.getIntExtra("position", -1);
 
+        editTime.setIs24HourView(true);
 
         }
 
