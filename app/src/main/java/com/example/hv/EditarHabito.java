@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -21,7 +23,9 @@ import java.util.List;
 
 public class EditarHabito extends AppCompatActivity {
 
-    private EditText editDate, editTime, editText;
+    private EditText editText;
+    private TimePicker editTime;
+    private DatePicker editDate;
     private Button buttonSave;
     private List<Habito> habitosList;
     private int position;
@@ -53,18 +57,15 @@ public class EditarHabito extends AppCompatActivity {
         editTime = findViewById(R.id.editTime);
 
         editText.setText(intent.getStringExtra("text"));
-        editDate.setText(intent.getStringExtra("fecha"));
-        editTime.setText(intent.getStringExtra("hora"));
 
-
-            position = intent.getIntExtra("position", -1);
+        position = intent.getIntExtra("position", -1);
 
 
         }
 
     private void saveHabito() {
-        String hora = editTime.getText().toString();
-        String fecha = editDate.getText().toString();
+        String hora = String.format("%02d:%02d",editTime.getCurrentHour(),editTime.getCurrentMinute());
+        String fecha = String.format("%04d-%02d-%02d",editDate.getYear(),editDate.getMonth() + 1,editDate.getDayOfMonth());
         String texto = editText.getText().toString();
 
         if (hora.isEmpty() || fecha.isEmpty() || texto.isEmpty()) {
