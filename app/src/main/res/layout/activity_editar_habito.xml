@@ -8,21 +8,6 @@
     android:textAlignment="center"
     tools:context=".EditarHabito">
 
-<!--    <EditText-->
-<!--        android:id="@+id/editDate"-->
-<!--        android:layout_width="170dp"-->
-<!--        android:layout_height="155dp"-->
-<!--        android:layout_marginTop="15dp"-->
-<!--        android:alpha="0.85"-->
-<!--        android:background="@xml/bordefechas"-->
-<!--        android:ems="10"-->
-<!--        android:hint="FECHA"-->
-<!--        android:inputType="date"-->
-<!--        app:circularflow_radiusInDP="40"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/editTime"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
     <DatePicker
         android:id="@+id/editDate"
         android:layout_width="170dp"
@@ -49,37 +34,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <!--    <EditText-->
-<!--        android:id="@+id/editTime"-->
-<!--        android:layout_width="170dp"-->
-<!--        android:layout_height="155dp"-->
-<!--        android:layout_marginTop="15dp"-->
-<!--        android:alpha="0.85"-->
-<!--        android:background="@xml/bordefechas"-->
-<!--        android:ems="10"-->
-<!--        android:hint="HORA"-->
-<!--        android:inputType="time"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/editDate"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--        android:id="@+id/recyclerViewHabitos"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="0dp"-->
-    <!--        android:layout_marginStart="1dp"-->
-    <!--        android:layout_marginTop="15dp"-->
-    <!--        android:layout_marginEnd="2dp"-->
-    <!--        android:layout_marginBottom="8dp"-->
-    <!--        android:alpha="0.85"-->
-    <!--        android:background="@xml/border_textview"-->
-    <!--        app:layout_constraintBottom_toTopOf="@+id/Inicio"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/addHabito"-->
-    <!--        tools:listitem="@layout/textrecyclerview" />-->
-
 
     <TimePicker
         android:id="@+id/editTime"

@@ -11,8 +11,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -28,8 +30,10 @@ import java.util.TimeZone;
 
 public class AddHabito extends AppCompatActivity {
 
-    private EditText editDate, editTime, editText;
+    private EditText editText;
     private TextView introducirHabito;
+    private TimePicker editTime;
+    private DatePicker editDate;
     private Button inicio, add_habito, buttonSave;
     private static final int REQUEST_CODE = 1; // Código de solicitud para permisos
     private static final String TAG = "Notify";
@@ -57,15 +61,14 @@ public class AddHabito extends AppCompatActivity {
               @Override
               public void onClick(View view) {
                   saveHabito();
-
               }
           });
 
     }
 
     private void saveHabito(){
-        String hora = editTime.getText().toString();
-        String fecha = editDate.getText().toString();
+        String hora = String.format("%02d:%02d",editTime.getCurrentHour(),editTime.getCurrentMinute());
+        String fecha = String.format("%04d-%02d-%02d",editDate.getYear(),editDate.getMonth() + 1,editDate.getDayOfMonth());
         String texto = editText.getText().toString();
 
         if(hora.isEmpty() || fecha.isEmpty() || texto.isEmpty()){
@@ -142,8 +145,8 @@ public class AddHabito extends AppCompatActivity {
 
         // Crea un intent para el receptor de la notificación
         Intent intent = new Intent(this, NotificationReceiver.class);
-        intent.putExtra("fecha",editDate.getText().toString());
-        intent.putExtra("hora",editTime.getText().toString());
+        intent.putExtra("fecha",String.format("%02d:%02d",editTime.getCurrentHour(),editTime.getCurrentMinute()));
+        intent.putExtra("hora",String.format("%04d-%02d-%02d",editDate.getYear(),editDate.getMonth() + 1,editDate.getDayOfMonth()));
         intent.putExtra("texto",editText.getText().toString());
 
         //DatabaseClient.getInstance(getApplicationContext()).getHabitoDatabase().habitoDao().getAllHabitos().toString())
