@@ -53,14 +53,9 @@
         android:layout_width="114dp"
         android:layout_height="98dp"
         android:layout_marginTop="10dp"
-        android:backgroundTint="#FFFFFF"
-        android:foregroundTint="#EDE7E7"
         android:text="HV"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textColorLink="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="78sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,7 +97,17 @@
         app:layout_constraintBottom_toTopOf="@+id/editarHabitos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/FechaMain" />
+        app:layout_constraintTop_toBottomOf="@+id/FechaMain"
+        tools:listitem="@layout/textrecyclerview"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewHabitos" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

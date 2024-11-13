@@ -9,5 +9,8 @@
     <color name="text">#FFF</color>
     <color name="textBlack">#FF000000</color>
 
+    <color name="defaultColor">#FFFFFF</color>
+    <color name="newColor">#FF0000</color>
+
 
 </resources>

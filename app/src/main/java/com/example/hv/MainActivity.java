@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Switch;
 
 import androidx.activity.EdgeToEdge;
@@ -29,11 +30,12 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Switch aSwitch;
+    private Switch aSwitch,switchHabitos;
     private Button editarHabitos;
     private RecyclerView recyclerView;
     private List<Habito> habitosList;
     private HabitoAdapter habitoAdapter;
+    private ProgressBar progressBar;
 
 
 
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         autoD8.setText(date);
         autoTime.setText(time);
-
+        progressBar = findViewById(R.id.progressBar);
         recyclerView = findViewById(R.id.recyclerViewHabitos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         if(mode == 32)
             aSwitch.setText("LIGHT MODE");
         else
-            aSwitch.setText("DDARK MODE");
+            aSwitch.setText("DARK MODE");
         aSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -113,5 +115,6 @@ public class MainActivity extends AppCompatActivity {
         habitoAdapter = new HabitoAdapter(habitosListToday, habitoDao, getApplicationContext());
 
         recyclerView.setAdapter(habitoAdapter);
+        progressBar.setMax(habitoAdapter.getItemCount());
     }
 }
