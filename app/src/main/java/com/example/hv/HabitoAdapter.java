@@ -49,10 +49,11 @@ public class HabitoAdapter extends RecyclerView.Adapter<HabitoAdapter.HabitoView
         //Cambio de color al recyclerView
 
         holder.switchHabito.setOnCheckedChangeListener((buttonView, isChecked)-> {
-            if (isChecked) { holder.linearLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.newColor));
+            if (isChecked) {
+                holder.linearLayout.setBackgroundResource(R.drawable.linearlayout);
             }
             else {
-                holder.linearLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.defaultColor));
+                holder.linearLayout.setBackgroundResource(R.drawable.borde);
             }
         });
     }

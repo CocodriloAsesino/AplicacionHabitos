@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         aSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cambioNigga();
+                darkmode();
             }
         });
 
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intentAdd);
     }
 
-    public void cambioNigga() {
+    public void darkmode() {
         if (aSwitch.isChecked()) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             aSwitch.setText("DARK MODE");

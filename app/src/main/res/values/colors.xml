@@ -11,6 +11,8 @@
 
     <color name="defaultColor">#FFFFFF</color>
     <color name="newColor">#FF0000</color>
+    <color name="newColor2">#FF0000</color>
+    <color name="recuadros">#52DFE9</color>
 
 
 </resources>
